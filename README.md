@@ -29,6 +29,29 @@ python3 server.py
 
 ## 部署到公网
 
+### Hugging Face Spaces
+
+如果你不想继续被绑卡流程卡住，最推荐换成 `Hugging Face Spaces (Docker)`。
+
+这个仓库已经补好了：
+
+- [Dockerfile](./Dockerfile)
+- [.dockerignore](./.dockerignore)
+- [SPACE_README.md](./SPACE_README.md)
+
+部署方法：
+
+1. 在 Hugging Face 创建一个新的 `Space`
+2. SDK 选择 `Docker`
+3. 把仓库文件上传到 Space 仓库
+4. 把 [SPACE_README.md](./SPACE_README.md) 的内容复制为 Space 仓库中的 `README.md`
+5. 推送后，平台会自动构建并部署
+
+Hugging Face 官方文档：
+
+- [Spaces Overview](https://huggingface.co/docs/hub/en/spaces-overview)
+- [Docker Spaces](https://huggingface.co/docs/hub/en/spaces-sdks-docker)
+
 ### Render
 
 这个项目已经适配 Render，仓库中已包含：
@@ -62,8 +85,11 @@ ai_safety_tracker/
 │   ├── app.js
 │   ├── index.html
 │   └── styles.css
+├── .dockerignore
 ├── .gitignore
+├── Dockerfile
 ├── README.md
+├── SPACE_README.md
 ├── render.yaml
 ├── requirements.txt
 └── server.py
