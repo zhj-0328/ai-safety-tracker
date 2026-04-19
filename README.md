@@ -1,70 +1,93 @@
 # AI Safety Tracker
 
-一个轻量本地网页，用来按来源追踪 AI 安全论文与 safety / alignment 报告。
+一个可直接部署的小型网页项目，用来按来源追踪 AI 安全前沿论文与 safety / alignment 报告。
 
-## 已接入来源
+## 项目特性
+
+- 按来源分栏浏览：点击哪个来源，就只看哪个来源的内容
+- 聚合顶级安全会议、顶级 AI 会议、arXiv 实时论文流和工业界安全研究页
+- 支持 `Security of AI` 与 `AI for Security` 相关关键词抓取
+- 自动刷新、手动刷新、关键词过滤、`NEW` 标记
+- 轻量后端，无需数据库
+
+## 当前接入来源
 
 - `S&P / NDSS / USENIX Security / CCS`
 - `ICML 2025 / CVPR 2025`
 - `arXiv · LLM Security / Adversarial Robustness / Data Poisoning / Privacy & Inference`
+- `arXiv · Security of AI / AI for Security`
 - `Anthropic Research / Google DeepMind Publications`
 
-## 功能
-
-- 每个抓取来源都有独立入口，点哪个来源就看哪个来源的内容
-- 自动刷新和手动刷新
-- 本地缓存，避免每次打开都全量重抓
-- `NEW` 标记，标出本次相较历史缓存的新条目
-- 关键词过滤
-
-## 运行
+## 本地运行
 
 ```bash
-cd /Users/hjzhou/codex/ai_safety_tracker
+python3 -m pip install -r requirements.txt
 python3 server.py
 ```
 
-然后打开：
-
-[http://127.0.0.1:8765](http://127.0.0.1:8765)
+打开 [http://127.0.0.1:8765](http://127.0.0.1:8765)
 
 ## 部署到公网
 
-### 方案一：Render
+### Render
 
-这个项目已经适配了 Render：
+这个项目已经适配 Render，仓库中已包含：
 
-- 代码里会自动读取平台分配的 `PORT`
-- 已提供 [render.yaml](/Users/hjzhou/codex/ai_safety_tracker/render.yaml)
-- 依赖已写入 [requirements.txt](/Users/hjzhou/codex/ai_safety_tracker/requirements.txt)
+- [render.yaml](./render.yaml)
+- [requirements.txt](./requirements.txt)
 
-步骤：
+常用配置：
 
-1. 把 [ai_safety_tracker](/Users/hjzhou/codex/ai_safety_tracker) 上传到 GitHub 仓库
-2. 打开 Render 控制台，创建 `Web Service`
-3. 连接你的 GitHub 仓库
-4. 选择这个项目目录作为根目录
-5. Render 会使用：
-   - Build Command: `pip install -r requirements.txt`
-   - Start Command: `python server.py`
-6. 部署完成后会得到一个 `onrender.com` 链接
-
-### 方案二：Railway
-
-Railway 也可以直接部署这个项目。
-
-常用设置：
-
-- Root Directory: `ai_safety_tracker`
 - Build Command: `pip install -r requirements.txt`
 - Start Command: `python server.py`
 
-### 注意
+部署后会得到一个公网链接，可直接发送给老师查看。
 
-- 这是一个演示型服务，当前数据缓存保存在 [data/tracker_state.json](/Users/hjzhou/codex/ai_safety_tracker/data/tracker_state.json)
-- 如果平台重启或重新部署，这个缓存文件可能被重置
-- 对“发老师看”这个场景，一般已经够用
+### Railway
+
+也可以部署到 Railway。
+
+常用配置：
+
+- Root Directory: 仓库根目录
+- Build Command: `pip install -r requirements.txt`
+- Start Command: `python server.py`
+
+## 仓库结构
+
+```text
+ai_safety_tracker/
+├── data/
+├── static/
+│   ├── app.js
+│   ├── index.html
+│   └── styles.css
+├── .gitignore
+├── README.md
+├── render.yaml
+├── requirements.txt
+└── server.py
+```
+
+## 说明
+
+- 运行时缓存文件默认写入 `data/tracker_state.json`
+- 该缓存文件已加入 `.gitignore`，不会污染仓库
+- 服务在云平台上会自动读取 `PORT` 环境变量，本地默认使用 `8765`
+
+## 上传到 GitHub
+
+如果你还没有关联远程仓库，可以直接执行：
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin <your-repo-url>
+git push -u origin main
+```
 
 ## 后续扩展
 
-如果你接下来给我新的来源建议，我只需要在 [server.py](/Users/hjzhou/codex/ai_safety_tracker/server.py) 里补一个 `Source` 配置和对应抓取器，就能把它接进左侧导航。
+如果你后面还要继续加来源，只需要在 [server.py](./server.py) 中补一个 `Source` 配置和对应抓取器即可。

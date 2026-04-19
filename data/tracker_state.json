@@ -1,7 +1,7 @@
 {
   "sources": {
     "sp": {
-      "fetched_at": "2026-04-19T03:57:50+00:00",
+      "fetched_at": "2026-04-19T04:07:50+00:00",
       "items": [
         {
           "id": "f0e9d65807631c8f",
@@ -1120,7 +1120,7 @@
       "error": ""
     },
     "ndss": {
-      "fetched_at": "2026-04-19T03:57:50+00:00",
+      "fetched_at": "2026-04-19T04:07:50+00:00",
       "items": [
         {
           "id": "3c9d3826975a5ed4",
@@ -2748,7 +2748,7 @@
       "error": ""
     },
     "usenix": {
-      "fetched_at": "2026-04-19T03:57:50+00:00",
+      "fetched_at": "2026-04-19T04:07:51+00:00",
       "items": [
         {
           "id": "afaa82eefc488319",
@@ -4766,7 +4766,7 @@
       "error": ""
     },
     "ccs": {
-      "fetched_at": "2026-04-19T03:57:51+00:00",
+      "fetched_at": "2026-04-19T04:07:51+00:00",
       "items": [
         {
           "id": "68c91f812d43dd81",
@@ -6274,7 +6274,7 @@
       "error": ""
     },
     "icml_2025": {
-      "fetched_at": "2026-04-19T03:57:52+00:00",
+      "fetched_at": "2026-04-19T04:07:52+00:00",
       "items": [
         {
           "id": "a171469a1e6f5583",
@@ -6764,7 +6764,7 @@
           "subcategory": "ICML 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "d7e551d6932f1229",
@@ -6834,7 +6834,7 @@
           "subcategory": "ICML 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "b857b203ed5bb965",
@@ -6848,7 +6848,7 @@
           "subcategory": "ICML 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "347e2f3fe8872234",
@@ -6862,7 +6862,7 @@
           "subcategory": "ICML 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "2562c554b0cc8892",
@@ -6876,7 +6876,7 @@
           "subcategory": "ICML 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "782da4dd3742889f",
@@ -6946,7 +6946,7 @@
           "subcategory": "ICML 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "57977b16aca7e314",
@@ -7044,7 +7044,7 @@
           "subcategory": "ICML 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "b54802fcf5bd0cea",
@@ -7072,7 +7072,7 @@
           "subcategory": "ICML 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "666794b872dbf0e4",
@@ -7086,7 +7086,7 @@
           "subcategory": "ICML 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "7697ad8e2694ecf9",
@@ -7366,7 +7366,7 @@
           "subcategory": "ICML 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "84904e8cdd765623",
@@ -7492,7 +7492,7 @@
       "error": ""
     },
     "cvpr_2025": {
-      "fetched_at": "2026-04-19T03:57:59+00:00",
+      "fetched_at": "2026-04-19T04:08:00+00:00",
       "items": [
         {
           "id": "8c9b8a130e2ed190",
@@ -7814,7 +7814,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "5c68fa2338545bcd",
@@ -7856,7 +7856,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "08889b13d343e9cb",
@@ -7870,7 +7870,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "ec158dbb20fcf8c6",
@@ -7926,7 +7926,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "5aa8787efe705eb9",
@@ -7940,7 +7940,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "87fad9311ac9ba91",
@@ -7968,7 +7968,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "67833c8af0cb7aed",
@@ -7982,7 +7982,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "32d7ca1ad8fcb586",
@@ -8024,7 +8024,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "29ab7b3c5444dfdf",
@@ -8094,7 +8094,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "2dc35047273a5813",
@@ -8220,7 +8220,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "cf613fa4bd24ff1a",
@@ -8234,7 +8234,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "fbd4f074bb820141",
@@ -8304,7 +8304,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "6efc832bad96a72b",
@@ -8332,7 +8332,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "db5c6ce0061f8fa2",
@@ -8346,7 +8346,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "a73103022a6a3782",
@@ -8360,7 +8360,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "15383302bd561bb6",
@@ -8374,7 +8374,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "f51b26ee14300b42",
@@ -8402,7 +8402,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "d6f25ea7bd754bd3",
@@ -8416,7 +8416,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "a294b3763f45a8ea",
@@ -8514,7 +8514,7 @@
           "subcategory": "CVPR 2025",
           "match_score": 2,
           "content_type": "paper",
-          "is_new": true
+          "is_new": false
         },
         {
           "id": "dd7f27ab42d26741",
@@ -8719,7 +8719,7 @@
       "error": ""
     },
     "arxiv_llm_security": {
-      "fetched_at": "2026-04-19T03:58:00+00:00",
+      "fetched_at": "2026-04-19T04:08:00+00:00",
       "items": [
         {
           "id": "90ba06fc9e7f5486",
@@ -9102,7 +9102,7 @@
       "error": ""
     },
     "arxiv_robustness": {
-      "fetched_at": "2026-04-19T03:58:00+00:00",
+      "fetched_at": "2026-04-19T04:08:00+00:00",
       "items": [
         {
           "id": "dc58b84d9f29cc68",
@@ -9485,7 +9485,7 @@
       "error": ""
     },
     "arxiv_poisoning": {
-      "fetched_at": "2026-04-19T03:58:00+00:00",
+      "fetched_at": "2026-04-19T04:08:01+00:00",
       "items": [
         {
           "id": "faaad9b3acb0725c",
@@ -9868,7 +9868,7 @@
       "error": ""
     },
     "arxiv_privacy": {
-      "fetched_at": "2026-04-19T03:58:00+00:00",
+      "fetched_at": "2026-04-19T04:08:01+00:00",
       "items": [
         {
           "id": "bd50950de874be56",
@@ -10251,7 +10251,7 @@
       "error": ""
     },
     "anthropic_alignment": {
-      "fetched_at": "2026-04-19T03:58:02+00:00",
+      "fetched_at": "2026-04-19T04:08:06+00:00",
       "items": [
         {
           "id": "20dec026924c3832",
@@ -10333,7 +10333,7 @@
       "error": ""
     },
     "deepmind_safety": {
-      "fetched_at": "2026-04-19T03:58:03+00:00",
+      "fetched_at": "2026-04-19T04:08:08+00:00",
       "items": [
         {
           "id": "77d9d594fe4221d0",
@@ -10386,7 +10386,7 @@
       "error": ""
     },
     "arxiv_security_of_ai": {
-      "fetched_at": "2026-04-19T03:58:01+00:00",
+      "fetched_at": "2026-04-19T04:08:01+00:00",
       "items": [
         {
           "id": "d7fc895bcf5b07c9",
@@ -10769,7 +10769,7 @@
       "error": ""
     },
     "arxiv_ai_for_security": {
-      "fetched_at": "2026-04-19T03:58:01+00:00",
+      "fetched_at": "2026-04-19T04:08:02+00:00",
       "items": [
         {
           "id": "476b5d479a87972b",
