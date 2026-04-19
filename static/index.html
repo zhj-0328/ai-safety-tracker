@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Safety Paper Tracker</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <p class="eyebrow">AI SAFETY TRACKER</p>
+          <h1>AI 安全前沿论文</h1>
+          <p class="brand-copy">
+            左侧每个来源就是一个独立入口。点击哪个来源，就只看哪个来源抓到的论文或安全报告。
+          </p>
+        </div>
+
+        <div class="sidebar-panel">
+          <div class="panel-head">
+            <h2>来源导航</h2>
+            <button id="refreshButton" class="ghost-button" type="button">立即刷新</button>
+          </div>
+          <nav id="sourceNav" class="source-nav" aria-label="论文来源"></nav>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section class="hero">
+          <div>
+            <p class="eyebrow">会议 + arXiv + 工业界 Safety</p>
+            <h2 id="heroTitle">加载中...</h2>
+            <p id="heroDescription" class="hero-copy">正在抓取来源数据。</p>
+          </div>
+          <div class="hero-stats">
+            <article class="stat-card">
+              <span>来源数</span>
+              <strong id="sourceCount">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>当前来源条目</span>
+              <strong id="itemCount">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>最近更新</span>
+              <strong id="lastUpdated">--</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="toolbar">
+          <label class="search-field">
+            <span>关键词过滤</span>
+            <input id="searchInput" type="search" placeholder="例如 jailbreak / poisoning / privacy / watermark" />
+          </label>
+
+          <label class="toggle-field">
+            <input id="newOnlyToggle" type="checkbox" />
+            <span>只看本次新抓到的内容</span>
+          </label>
+
+          <a id="sourceLink" class="source-link" href="#" target="_blank" rel="noreferrer">打开原始来源</a>
+        </section>
+
+        <section id="activeSourceMeta" class="active-source-meta"></section>
+        <section id="cards" class="card-grid" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <template id="cardTemplate">
+      <article class="paper-card">
+        <div class="card-topline">
+          <span class="card-chip card-type"></span>
+          <span class="card-chip card-topic"></span>
+          <span class="card-chip card-new">NEW</span>
+        </div>
+        <h3 class="card-title"></h3>
+        <p class="card-authors"></p>
+        <p class="card-summary"></p>
+        <div class="card-meta"></div>
+        <div class="card-actions">
+          <a class="primary-link" target="_blank" rel="noreferrer">查看条目</a>
+        </div>
+      </article>
+    </template>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
