@@ -17,6 +17,9 @@ from typing import Callable
 
 from bs4 import BeautifulSoup
 
+from config.keywords import BASE_KEYWORDS
+from config.sources import MARKDOWN_SOURCE_URL, SOURCE_DEFINITIONS as RAW_SOURCE_DEFINITIONS
+
 
 ROOT = Path(__file__).resolve().parent
 STATIC_DIR = ROOT / "static"
@@ -26,55 +29,6 @@ STATE_PATH = DATA_DIR / "tracker_state.json"
 CACHE_TTL_SECONDS = 15 * 60
 ARXIV_MAX_RESULTS = 25
 USER_AGENT = "Mozilla/5.0 (compatible; AI-Safety-Tracker/1.0; +https://github.com/openai)"
-
-MARKDOWN_SOURCE_URL = "https://raw.githubusercontent.com/Zhou-Zi7/AI-Security-Resources/main/README.md"
-BASE_KEYWORDS = [
-    "ai for security",
-    "security of ai",
-    "adversarial",
-    "anomaly detection",
-    "alignment",
-    "attack",
-    "auditor",
-    "backdoor",
-    "constitutional",
-    "content safety",
-    "cybersecurity",
-    "data poisoning",
-    "defense",
-    "detection",
-    "harmful",
-    "hallucination",
-    "inference attack",
-    "interpretability",
-    "jailbreak",
-    "llm security",
-    "malware",
-    "membership inference",
-    "moderation",
-    "malicious",
-    "malware",
-    "network intrusion",
-    "phishing",
-    "poison",
-    "privacy",
-    "prompt injection",
-    "red team",
-    "robust",
-    "robustness",
-    "safe ai",
-    "safety",
-    "secure",
-    "security",
-    "steering",
-    "threat",
-    "toxic",
-    "trojan",
-    "unlearn",
-    "vulnerability detection",
-    "vulnerability",
-    "watermark",
-]
 
 KEYWORD_PATTERNS = [re.compile(re.escape(keyword), re.IGNORECASE) for keyword in BASE_KEYWORDS]
 
@@ -90,134 +44,7 @@ class Source:
     extra: dict
 
 
-SOURCE_DEFINITIONS = [
-    Source(
-        "sp",
-        "S&P",
-        "顶级安全会议",
-        "BIG4 AI 安全论文聚合仓库中的 IEEE S&P 分区。",
-        "https://github.com/Zhou-Zi7/Awesome-AI-Security-BIG4",
-        "big4_markdown",
-        {"heading": "## Papers in S&P"},
-    ),
-    Source(
-        "ndss",
-        "NDSS",
-        "顶级安全会议",
-        "BIG4 AI 安全论文聚合仓库中的 NDSS 分区。",
-        "https://github.com/Zhou-Zi7/Awesome-AI-Security-BIG4",
-        "big4_markdown",
-        {"heading": "## Papers in NDSS"},
-    ),
-    Source(
-        "usenix",
-        "USENIX Security",
-        "顶级安全会议",
-        "BIG4 AI 安全论文聚合仓库中的 USENIX Security 分区。",
-        "https://github.com/Zhou-Zi7/Awesome-AI-Security-BIG4",
-        "big4_markdown",
-        {"heading": "## Papers in USENIX Security"},
-    ),
-    Source(
-        "ccs",
-        "CCS",
-        "顶级安全会议",
-        "BIG4 AI 安全论文聚合仓库中的 CCS 分区。",
-        "https://github.com/Zhou-Zi7/Awesome-AI-Security-BIG4",
-        "big4_markdown",
-        {"heading": "## Papers in CCS"},
-    ),
-    Source(
-        "icml_2025",
-        "ICML 2025",
-        "顶级 AI 会议",
-        "PMLR ICML 2025 proceedings，按 AI 安全关键词过滤。",
-        "https://proceedings.mlr.press/v267/",
-        "pmlr_html",
-        {"limit": 80},
-    ),
-    Source(
-        "cvpr_2025",
-        "CVPR 2025",
-        "顶级 AI 会议",
-        "CVPR 2025 Open Access 论文页，按计算机视觉安全关键词过滤。",
-        "https://openaccess.thecvf.com/CVPR2025?day=all",
-        "cvpr_html",
-        {"limit": 80},
-    ),
-    Source(
-        "arxiv_llm_security",
-        "arXiv · LLM Security",
-        "实时论文流",
-        "跟踪 LLM security、prompt injection、jailbreak 等方向。",
-        "https://arxiv.org/search/?query=llm+security&searchtype=all&abstracts=show&order=-announced_date_first&size=25",
-        "arxiv_api",
-        {"query": 'all:"llm security" OR all:"prompt injection" OR all:jailbreak OR all:"model backdoor"', "limit": 25},
-    ),
-    Source(
-        "arxiv_robustness",
-        "arXiv · Adversarial Robustness",
-        "实时论文流",
-        "跟踪 adversarial attack / robustness 相关论文。",
-        "https://arxiv.org/search/?query=adversarial+robustness&searchtype=all&abstracts=show&order=-announced_date_first&size=25",
-        "arxiv_api",
-        {"query": 'all:"adversarial robustness" OR all:"adversarial attack"', "limit": 25},
-    ),
-    Source(
-        "arxiv_poisoning",
-        "arXiv · Data Poisoning",
-        "实时论文流",
-        "跟踪数据投毒、后门攻击和 unlearning 方向。",
-        "https://arxiv.org/search/?query=data+poisoning&searchtype=all&abstracts=show&order=-announced_date_first&size=25",
-        "arxiv_api",
-        {"query": 'all:"data poisoning" OR all:"backdoor attack" OR all:unlearning', "limit": 25},
-    ),
-    Source(
-        "arxiv_privacy",
-        "arXiv · Privacy & Inference",
-        "实时论文流",
-        "跟踪 membership inference、隐私攻击与私有推理。",
-        "https://arxiv.org/search/?query=membership+inference&searchtype=all&abstracts=show&order=-announced_date_first&size=25",
-        "arxiv_api",
-        {"query": 'all:"membership inference" OR all:"privacy attack" OR all:"private inference"', "limit": 25},
-    ),
-    Source(
-        "arxiv_security_of_ai",
-        "arXiv · Security of AI",
-        "实时论文流",
-        "跟踪模型攻击、防御、隐私、越狱、鲁棒性等 Security of AI 方向。",
-        "https://arxiv.org/search/?query=security+of+ai&searchtype=all&abstracts=show&order=-announced_date_first&size=25",
-        "arxiv_api",
-        {"query": 'all:"security of ai" OR all:"ai security" OR all:"model security" OR all:"llm security"', "limit": 25},
-    ),
-    Source(
-        "arxiv_ai_for_security",
-        "arXiv · AI for Security",
-        "实时论文流",
-        "跟踪用 AI 做漏洞挖掘、恶意代码检测、入侵检测等 AI for Security 方向。",
-        "https://arxiv.org/search/?query=ai+for+security&searchtype=all&abstracts=show&order=-announced_date_first&size=25",
-        "arxiv_api",
-        {"query": 'all:"ai for security" OR all:cybersecurity OR all:"intrusion detection" OR all:"malware detection" OR all:"vulnerability detection"', "limit": 25},
-    ),
-    Source(
-        "anthropic_alignment",
-        "Anthropic Research",
-        "工业界 Safety / Alignment",
-        "Anthropic 官方研究页中与 safety、alignment、interpretability 相关的内容。",
-        "https://www.anthropic.com/research",
-        "anthropic_html",
-        {"limit": 24},
-    ),
-    Source(
-        "deepmind_safety",
-        "Google DeepMind Publications",
-        "工业界 Safety / Alignment",
-        "DeepMind 官方 publications 页中与 AI safety / alignment 高相关的条目。",
-        "https://deepmind.google/research/publications/",
-        "deepmind_html",
-        {"limit": 24},
-    ),
-]
+SOURCE_DEFINITIONS = [Source(**source_config) for source_config in RAW_SOURCE_DEFINITIONS]
 
 SOURCE_MAP = {source.source_id: source for source in SOURCE_DEFINITIONS}
 FETCHERS: dict[str, Callable[[Source], list[dict]]] = {}
