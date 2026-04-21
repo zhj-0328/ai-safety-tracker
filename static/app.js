@@ -136,7 +136,7 @@ function renderSourceMeta(source, visibleItems) {
       ${chips.join("")}
     </div>
     <div class="meta-copy">${source.description}</div>
-    <div class="meta-copy">展示 ${visibleItems.length} / ${source.items.length} 条，最近抓取：${formatDate(source.fetched_at)}</div>
+    <div class="meta-copy">当前展示 ${visibleItems.length} / ${source.items.length} 条近一年论文，最近抓取：${formatDate(source.fetched_at)}</div>
     ${source.error ? `<div class="error-banner">${source.error}</div>` : ""}
   `;
 }
@@ -181,7 +181,7 @@ function renderCards(source) {
   if (!visibleItems.length) {
     const empty = document.createElement("div");
     empty.className = "empty-state";
-    empty.textContent = "当前来源没有匹配条目。你可以切换来源，或者缩小关键词过滤范围。";
+    empty.textContent = "当前期刊下没有符合筛选条件的近一年论文。你可以切换来源，或调整关键词范围。";
     elements.cards.append(empty);
     return visibleItems;
   }
@@ -195,7 +195,7 @@ function renderCards(source) {
 function renderHero(source, visibleItems) {
   elements.heroTitle.textContent = source ? source.name : "暂无来源";
   elements.heroDescription.textContent = source
-    ? `${source.description} 现在每个来源都是一个独立页面入口，点击左侧即可跳转查看对应内容。`
+    ? `${source.description} 左侧每个来源都是独立入口，点击即可查看对应期刊在近一年内抓取到的论文。`
     : "暂无内容。";
   elements.sourceCount.textContent = String(state.sourceCount ?? 0);
   elements.itemCount.textContent = String(visibleItems.length);
@@ -262,9 +262,12 @@ async function boot() {
     if (window.location.protocol === "file:") {
       elements.heroDescription.textContent = "你现在是直接打开本地 HTML 文件。请先启动本地服务，或直接访问 http://127.0.0.1:8765 。";
     } else {
-      elements.heroDescription.textContent = error instanceof Error ? error.message : "未知错误";
+      elements.heroDescription.textContent = "线上数据接口暂时不可用，请稍后刷新重试。";
     }
-    elements.cards.innerHTML = `<div class="error-banner">页面初始化失败。请确认本地服务已运行：<code>python3 /Users/hjzhou/codex/ai_safety_tracker/server.py</code>，然后访问 <a href="http://127.0.0.1:8765" target="_blank" rel="noreferrer">http://127.0.0.1:8765</a>。</div>`;
+    elements.cards.innerHTML =
+      window.location.protocol === "file:"
+        ? `<div class="error-banner">页面初始化失败。请确认本地服务已运行：<code>python3 /Users/hjzhou/codex/ai_safety_tracker/server.py</code>，然后访问 <a href="http://127.0.0.1:8765" target="_blank" rel="noreferrer">http://127.0.0.1:8765</a>。</div>`
+        : `<div class="error-banner">页面初始化失败，暂时无法读取线上抓取结果。请稍后刷新，或等待服务完成重新构建。</div>`;
   }
 }
 
